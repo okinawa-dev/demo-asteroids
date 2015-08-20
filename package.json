@@ -18,6 +18,9 @@
     "node": "*"
   },
   "scripts": {
-    "build": "./scripts/build.sh ."
+    "prebuild": "rm -R ./build/* && mkdir ./build/asteroids && npm run build-engine",
+    "build": "./scripts/build.sh .",
+    "build-engine": "./node_modules/okinawa.js/scripts/build.sh ./node_modules/okinawa.js/ && cp ./node_modules/okinawa.js/build/okinawa.js ./build/asteroids/okinawa.js",
+    "postbuild":"cp ./game/index.html ./game/options.js ./game/style.css ./build/asteroids/ && cp -R ./game/fonts ./game/images ./game/sounds ./build/asteroids/"
   }
 }

@@ -1,0 +1,13 @@
+game/game.js
+game/loader.js
+game/scenes/scenes.js
+game/scenes/initial.js
+game/scenes/level.js
+game/scenes/background.js
+game/items/items.js
+game/items/meteor.js
+game/items/starship.js
+game/items/shot.js
+game/items/gun.js
+game/player.js
+game/points.js
