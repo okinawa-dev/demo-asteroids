@@ -7,4 +7,4 @@ How to build:
  * Using npm, in the root folder of the project:
    * `npm update` will install the dependencies of the project (the okinawa.js engine)
    * `npm run build` will build both the engine and the game.
-   * The result will be stored inside the `build/` folder. Open the `build/index.html` file in your favorite browser.
+   * The result will be stored inside the `build/` folder. Open the `build/asteroids/index.html` file in your favorite browser.

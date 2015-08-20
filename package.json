@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "jshint": "^2.8.0",
-    "okinawa.js": "https://github.com/neverbot/okinawa.js.git#master"
+    "okinawa.js": "https://github.com/neverbot/okinawa.js.git#master",
+    "uglify-js": "^2.4.24"
   },
   "devDependencies": {},
   "optionalDependencies": {},
@@ -18,9 +19,11 @@
     "node": "*"
   },
   "scripts": {
-    "prebuild": "rm -Rf ./build/* && mkdir ./build/asteroids && npm run build-engine",
+    "prebuild": "rm -Rf ./build/* && mkdir ./build/asteroids && npm run build:engine",
     "build": "./scripts/build.sh .",
-    "build-engine": "./node_modules/okinawa.js/scripts/build.sh ./node_modules/okinawa.js/ && cp ./node_modules/okinawa.js/build/okinawa.js ./build/asteroids/okinawa.js",
-    "postbuild":"cp ./game/index.html ./game/options.js ./game/style.css ./build/asteroids/ && cp -R ./game/fonts ./game/images ./game/sounds ./build/asteroids/"
+    "build:web" : "cp ./game/index.html ./game/options.js ./game/style.css ./build/asteroids/ && cp -R ./game/fonts ./game/images ./game/sounds ./build/asteroids/",
+    "build:engine": "./node_modules/okinawa.js/scripts/build.sh ./node_modules/okinawa.js/ && cp ./node_modules/okinawa.js/build/okinawa.js ./build/asteroids/okinawa.js",
+    "postbuild:uglify": "uglifyjs ./build/asteroids/okinawa.js -o ./build/asteroids/okinawa.min.js && uglifyjs ./build/asteroids/okinawa-asteroids.js -o ./build/asteroids/okinawa-asteroids.min.js",
+    "postbuild":"npm run postbuild:uglify && npm run build:web"
   }
 }
