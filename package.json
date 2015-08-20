@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "jshint": "^2.8.0",
-    "okinawa.js": "https://github.com/neverbot/okinawa.js.git#feature/npm-projects"
+    "okinawa.js": "https://github.com/neverbot/okinawa.js.git#master"
   },
   "devDependencies": {},
   "optionalDependencies": {},
