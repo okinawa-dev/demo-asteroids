@@ -19,7 +19,7 @@ Game.prototype.initialize = function()
 
   // Common background for every screen
   this.commonBackground = new Game.Background();
-  this.commonBackground.initialize()
+  this.commonBackground.initialize();
 
   this.loader = new Game.Loader();
   this.loader.initialize();
@@ -29,7 +29,7 @@ Game.prototype.initialize = function()
 
   this.points = new Game.Points();
   this.points.initialize();
-}
+};
 
 // Game Initialization
 Game.prototype.activate = function() 
@@ -49,11 +49,11 @@ Game.prototype.activate = function()
   lvl.initialize();
 
   engine.scenes.addScene(lvl, 'main_game'); 
-}
+};
 
 Game.prototype.step = function(dt)
 {
   // Only for logic, the avatar and other elements in the scene
   // will be updated via the scene hierarchy
   this.player.step(dt);
-}
+};

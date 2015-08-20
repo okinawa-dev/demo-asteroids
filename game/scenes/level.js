@@ -4,7 +4,7 @@ Game.SCENES.Level = function()
   Engine.Scene.call(this);
 
   this.timeLastMeteor = 0;
-}
+};
 
 Game.SCENES.Level.prototype = Object.create(Engine.Scene.prototype);
 Game.SCENES.Level.prototype.constructor = Game.SCENES.Level;
@@ -26,12 +26,12 @@ Game.SCENES.Level.prototype.activate = function()
   this.attachItem(engine.game.player.getAvatar());
 
   Engine.Scene.prototype.activate.call(this);
-}
+};
 
 Game.SCENES.Level.prototype.draw = function(ctx)
 {
   Engine.Scene.prototype.draw.call(this, ctx);
-}
+};
 
 Game.SCENES.Level.prototype.step = function(dt)
 {
@@ -87,7 +87,7 @@ Game.SCENES.Level.prototype.step = function(dt)
 
     this.attachItem(meteor);
   }
-}
+};
 
 Game.SCENES.Level.prototype.checkBoundaries = function()
 {
@@ -112,7 +112,7 @@ Game.SCENES.Level.prototype.checkBoundaries = function()
 
   // Remove any objects marked for removal
   this._finalizeRemoved();
-}
+};
 
 Game.SCENES.Level.prototype.checkCollisions = function()
 {
@@ -126,7 +126,7 @@ Game.SCENES.Level.prototype.checkCollisions = function()
     a = this.getAttachedItems()[i];
     
     // Objects without collisionRadius do not collide
-    if (a.collisionRadius == 0)
+    if (a.collisionRadius === 0)
       continue;
 
     for (var j = i+1; j < this.getAttachedItems().length; j++)
@@ -134,7 +134,7 @@ Game.SCENES.Level.prototype.checkCollisions = function()
       b = this.getAttachedItems()[j];
 
       // Objects without collisionRadius do not collide
-      if (b.collisionRadius == 0)
+      if (b.collisionRadius === 0)
         continue;
 
       if (Math.abs(a.position.x - b.position.x) > a.size.x / 2 + b.size.x / 2)
@@ -146,10 +146,10 @@ Game.SCENES.Level.prototype.checkCollisions = function()
       if (engine.math.pointDistance(a.position, b.position) <= a.collisionRadius + b.collisionRadius)
       {
         // Collide and remove each object
-        if (a.collide(b) == true)
+        if (a.collide(b) === true)
           this.detachItem(a);
         
-        if (b.collide(a) == true)
+        if (b.collide(a) === true)
           this.detachItem(b);
       }
     }
@@ -157,4 +157,4 @@ Game.SCENES.Level.prototype.checkCollisions = function()
 
   // Remove any objects marked for removal
   this._finalizeRemoved();
-}
+};
