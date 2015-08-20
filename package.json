@@ -19,6 +19,7 @@
     "node": "*"
   },
   "scripts": {
+    "lint": "jshint game/",    
     "prebuild": "rm -Rf ./build/* && mkdir ./build/asteroids && npm run build:engine",
     "build": "./scripts/build.sh .",
     "build:web" : "cp ./game/index.html ./game/options.js ./game/style.css ./build/asteroids/ && cp -R ./game/fonts ./game/images ./game/sounds ./build/asteroids/",
