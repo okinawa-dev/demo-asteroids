@@ -1,7 +1,7 @@
 {
   "author": "Ivan Alonso (@neverbot)",
-  "name": "okinawa.js",
-  "description": "Javascript 2D game engine",
+  "name": "okinawa-asteroids",
+  "description": "Asteroids clone using okinawa.js",
   "version": "1.0.0",
   "homepage": "http://dev.neverbot.com/okinawa.js",
   "repository": {
@@ -9,7 +9,8 @@
     "url": "git://github.com/neverbot/okinawa.js.git"
   },
   "dependencies": {
-    "jshint": "^2.8.0"
+    "jshint": "^2.8.0",
+    "okinawa.js": "https://github.com/neverbot/okinawa.js.git#feature/npm-projects"
   },
   "devDependencies": {},
   "optionalDependencies": {},
