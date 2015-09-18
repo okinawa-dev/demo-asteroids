@@ -65,6 +65,7 @@ Game.Player.prototype.step = function(dt)
   // If the avatar is not attached to a playable scene,
   // nothing to do
   if ((typeof(this.getAvatar().getParentScene()) != 'undefined') &&
+      (this.getAvatar().getParentScene() !== null) &&
       (this.getAvatar().getParentScene().playable === false))
     return;
 
