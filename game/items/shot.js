@@ -25,7 +25,7 @@ Game.ITEMS.Shot = function(creator, position, angle)
 
   this.maxRadius  = this.getRadius();
   this.collisionRadius = 12;
-}
+};
 
 Game.ITEMS.Shot.prototype = Object.create(Engine.Item.prototype);
 Game.ITEMS.Shot.prototype.constructor = Game.ITEMS.Shot;
@@ -36,12 +36,12 @@ Game.ITEMS.Shot.prototype.step = function(dt)
 
   // Not necessary if there are no animations, but here it is
   // engine.sprites.step(dt, this); 
-}
+};
 
 Game.ITEMS.Shot.prototype.draw = function(ctx) 
 {
   Engine.Item.prototype.draw.call(this, ctx);
-}
+};
 
 Game.ITEMS.Shot.prototype.collide = function(what)
 {
@@ -62,5 +62,5 @@ Game.ITEMS.Shot.prototype.collide = function(what)
 
   // true == should be removed
   return true;
-}
+};
 

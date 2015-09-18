@@ -11,7 +11,7 @@ Game.Background = function()
   this.parallaxDisplacement = 5;
 
   this.starfields = [];
-}
+};
 
 Game.Background.prototype = Object.create(Engine.Background.prototype);
 Game.Background.prototype.constructor = Game.Background;
@@ -31,7 +31,7 @@ Game.Background.prototype.initialize = function()
     this.offsets[depth] = 0;
 
     // fill the deepest layer with black background
-    if (depth == 0)
+    if (depth === 0)
     {
       this.starfields[depth].ctx.fillStyle = '#000';
       this.starfields[depth].ctx.fillRect(0,0, this.starfields[depth].width, this.starfields[depth].height);
@@ -51,7 +51,7 @@ Game.Background.prototype.initialize = function()
                         depth + 1);
     } 
   }  
-}
+};
 
 Game.Background.prototype.step = function(dt) 
 {
@@ -63,7 +63,7 @@ Game.Background.prototype.step = function(dt)
     this.offsets[depth] += this.speeds[depth] / dt;
     this.offsets[depth] = this.offsets[depth] % this.starfields[depth].height;
   }
-}
+};
 
 Game.Background.prototype.draw = function(ctx) 
 {
@@ -80,7 +80,7 @@ Game.Background.prototype.draw = function(ctx)
     var parallaxOffset;
 
     // No player or one the three first screens (preloader, menu or initial animation)
-    if ((engine.game.player == undefined) || (engine.currentScene <= 2))
+    if ((typeof(engine.game.player) == 'undefined') || (engine.game.player === null) || (engine.currentScene <= 2))
     {
       parallaxOffset = (depth + 1) * this.parallaxDisplacement * (engine.core.size.x / 2) / engine.core.size.x;
     }
@@ -116,4 +116,4 @@ Game.Background.prototype.draw = function(ctx)
               engine.core.size.x, remaining);
     }
   }
-}
+};

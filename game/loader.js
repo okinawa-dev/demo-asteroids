@@ -1,7 +1,7 @@
 
 Game.Loader = function() 
 {
-}
+};
 
 // Game.Loader Initialization
 Game.Loader.prototype.initialize = function() 
@@ -44,7 +44,7 @@ Game.Loader.prototype.initialize = function()
   engine.localization.addTextsToStringTable('english', this.localization_en());
   engine.localization.addTextsToStringTable('spanish', this.localization_es());  
   engine.localization.selectLanguage(engine.game.options.defaultLanguage);  
-}
+};
 
 Game.Loader.prototype.localization_en = function()
 {
@@ -55,8 +55,8 @@ Game.Loader.prototype.localization_en = function()
     'points'          : 'Points',
     'accumulated'     : 'Accumulated points',
     'totals'          : 'Total points',
-  }
-}
+  };
+};
 
 Game.Loader.prototype.localization_es = function()
 {
@@ -67,5 +67,5 @@ Game.Loader.prototype.localization_es = function()
     'points'          : 'Puntos',
     'accumulated'     : 'Puntos acumulados',
     'totals'          : 'Puntos totales',
-  }
-}
+  };
+};

@@ -14,7 +14,7 @@ Game.Player = function()
 
   this.rotationSpeed = Math.PI/50;
   this.flightSpeed = 0.05; // More than 0.3 -> impossible to control
-}
+};
 
 Game.Player.prototype = Object.create(Engine.Player.prototype);
 Game.Player.prototype.constructor = Game.Player;
@@ -27,7 +27,7 @@ Game.Player.prototype.initialize = function()
   this.avatar = new Game.ITEMS.Starship('starship');
 
   this.avatar.initialize();
-}
+};
 
 Game.Player.prototype.activate = function()
 {
@@ -43,7 +43,7 @@ Game.Player.prototype.activate = function()
   // new key events
 
   this.getAvatar().getParentScene().input.addKeyListener(this, 'eventKeyPressed', [ Engine.INPUT.KEYS.SPACEBAR ]);
-}
+};
 
 Game.Player.prototype.eventKeyPressed = function(keyCode)
 {
@@ -58,14 +58,14 @@ Game.Player.prototype.eventKeyPressed = function(keyCode)
       this.timeLastShot = now;
     }
   }
-}
+};
 
 Game.Player.prototype.step = function(dt)
 {
   // If the avatar is not attached to a playable scene,
   // nothing to do
-  if ((this.getAvatar().getParentScene() != undefined) &&
-      (this.getAvatar().getParentScene().playable == false))
+  if ((typeof(this.getAvatar().getParentScene()) != 'undefined') &&
+      (this.getAvatar().getParentScene().playable === false))
     return;
 
   // ------------------------------------------------
@@ -91,9 +91,9 @@ Game.Player.prototype.step = function(dt)
   //  Rotation
   // ------------------------------------------------
 
-  if (this.isTurningLeft == true)
+  if (this.isTurningLeft === true)
     this.avatar.vRot = -this.rotationSpeed;
-  else if (this.isTurningRight == true)
+  else if (this.isTurningRight === true)
     this.avatar.vRot = this.rotationSpeed;
   else
     this.avatar.vRot = 0;    
@@ -102,7 +102,7 @@ Game.Player.prototype.step = function(dt)
   //  Thrusting
   // ------------------------------------------------
 
-  if (this.isThrusting == true)
+  if (this.isThrusting === true)
   {
     var dir = engine.math.angleToDirectionVector(this.avatar.rotation.getAngle());
 
@@ -143,7 +143,5 @@ Game.Player.prototype.step = function(dt)
     this.avatar.move(0, this.avatar.size.y / 4);
     this.avatar.speed.y = -this.avatar.speed.y / 2;
   } 
-}
-
-
+};
 

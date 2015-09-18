@@ -17,7 +17,7 @@ Game.ITEMS.Meteor = function(size, speed)
 
   this.maxRadius = this.getRadius();
   this.collisionRadius = 29;
-}
+};
 
 Game.ITEMS.Meteor.prototype = Object.create(Engine.Item.prototype);
 Game.ITEMS.Meteor.prototype.constructor = Game.ITEMS.Meteor;
@@ -28,12 +28,12 @@ Game.ITEMS.Meteor.prototype.step = function(dt)
 
   // Not necessary if there are no animations, but here it is
   // engine.sprites.step(dt, this);
-}
+};
 
 Game.ITEMS.Meteor.prototype.draw = function(ctx) 
 {
   Engine.Item.prototype.draw.call(this, ctx);
-}
+};
 
 Game.ITEMS.Meteor.prototype.collide = function(what)
 {
@@ -73,5 +73,5 @@ Game.ITEMS.Meteor.prototype.collide = function(what)
 
   // true == should be removed
   return true;
-}
+};
 

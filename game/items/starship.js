@@ -15,7 +15,7 @@ Game.ITEMS.Starship = function(type)
   this.gunRack = [];
 
   this.motorEffect = null;
-}
+};
 
 Game.ITEMS.Starship.prototype = Object.create(Engine.Item.prototype);
 Game.ITEMS.Starship.prototype.constructor = Game.ITEMS.Starship;
@@ -39,7 +39,7 @@ Game.ITEMS.Starship.prototype.initialize = function()
 
   // Rotate the ship, because in the original image it looks towards the right side
   this.setRotation(- Math.PI / 2);
-}
+};
 
 Game.ITEMS.Starship.prototype.step = function(dt) 
 {
@@ -48,16 +48,16 @@ Game.ITEMS.Starship.prototype.step = function(dt)
 
   Engine.Item.prototype.step.call(this, dt);
 
-  if (engine.game.player.isThrusting == true)
+  if (engine.game.player.isThrusting === true)
     this.motorEffect.start();
   else
     this.motorEffect.stop();
-}
+};
 
 Game.ITEMS.Starship.prototype.draw = function(ctx) 
 {
   Engine.Item.prototype.draw.call(this, ctx);
-}
+};
 
 Game.ITEMS.Starship.prototype.collide = function(what)
 {
@@ -73,7 +73,7 @@ Game.ITEMS.Starship.prototype.collide = function(what)
 
   // should not be removed
   return false;
-}
+};
 
 Game.ITEMS.Starship.prototype.shoot = function()
 {
@@ -81,7 +81,7 @@ Game.ITEMS.Starship.prototype.shoot = function()
     this.gunRack[i].shoot(this);
 
   engine.sounds.play('shot');
-}
+};
 
 
 
