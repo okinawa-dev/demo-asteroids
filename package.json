@@ -6,25 +6,25 @@
   "homepage": "http://dev.neverbot.com/okinawa.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:neverbot/okinawa-asteroids.git"
+    "url": "git@github.com:okinawajs/okinawa-asteroids.git"
   },
   "dependencies": {
-    "jshint": "^2.8.0",
-    "okinawa.js": "https://github.com/neverbot/okinawa.js.git#master",
-    "uglify-js": "^2.4.24"
+    "okinawa.js": "github:okinawajs/okinawa.js#feature/ES2019"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babelify": "^10.0.0",
+    "browserify": "^16.3.0",
+    "connect": "^3.7.0",
+    "eslint": "^6.1.0",
+    "serve-static": "^1.14.1"
+  },
   "optionalDependencies": {},
-  "engines": {
-    "node": "*"
-  },
   "scripts": {
-    "lint": "jshint game/",    
-    "prebuild": "rm -Rf ./build/* && mkdir ./build/asteroids && npm run build:engine",
-    "build": "./scripts/build.sh .",
-    "build:web" : "cp ./game/index.html ./game/options.js ./game/style.css ./build/asteroids/ && cp -R ./game/fonts ./game/images ./game/sounds ./build/asteroids/",
-    "build:engine": "./node_modules/okinawa.js/scripts/build.sh ./node_modules/okinawa.js/ && cp ./node_modules/okinawa.js/build/okinawa.js ./build/asteroids/okinawa.js",
-    "postbuild:uglify": "uglifyjs ./build/asteroids/okinawa.js -o ./build/asteroids/okinawa.min.js && uglifyjs ./build/asteroids/okinawa-asteroids.js -o ./build/asteroids/okinawa-asteroids.min.js",
-    "postbuild":"npm run postbuild:uglify && npm run build:web"
+    "lint": "eslint .",
+    "build": "browserify index.js -o build/bundle.js -t [ babelify --global --presets [ @babel/preset-env  ] --plugins [ ] ]",
+    "build:test": "browserify index.js --list -t [ babelify --global --presets [ @babel/preset-env ] --plugins [ ] ]",
+    "start": "node server.js"
   }
 }
