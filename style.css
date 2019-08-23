@@ -43,8 +43,3 @@ canvas {
   /* avoid green selection color in android browser */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-/*
-@font-face {
-  font-family: "BaseFont";
-  src: url("assets/fonts/visitor1.ttf") format("truetype");
-} */

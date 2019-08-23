@@ -74,7 +74,7 @@ export default class Loader {
     //  Fonts
     // **************
     engine.preloader.addFont({
-      name: 'base',
+      name: 'baseFont',
       path: 'assets/fonts/visitor1.ttf'
     });
 
