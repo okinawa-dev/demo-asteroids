@@ -9,15 +9,15 @@
     "url": "git@github.com:okinawajs/okinawa-asteroids.git"
   },
   "dependencies": {
-    "okinawa.js": "github:okinawajs/okinawa.js#feature/ES2019"
+    "okinawa.js": "github:okinawajs/okinawa.js"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "babelify": "^10.0.0",
-    "browserify": "^16.3.0",
+    "browserify": "^16.5.0",
     "connect": "^3.7.0",
-    "eslint": "^6.1.0",
+    "eslint": "^6.2.1",
     "serve-static": "^1.14.1"
   },
   "optionalDependencies": {},
