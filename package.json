@@ -8,9 +8,6 @@
     "type": "git",
     "url": "git@github.com:okinawajs/okinawa-asteroids.git"
   },
-  "dependencies": {
-    "okinawa.js": "github:okinawajs/okinawa.js"
-  },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
@@ -26,5 +23,8 @@
     "build": "browserify index.js -o build/bundle.js -t [ babelify --global --presets [ @babel/preset-env  ] --plugins [ ] ]",
     "build:test": "browserify index.js --list -t [ babelify --global --presets [ @babel/preset-env ] --plugins [ ] ]",
     "start": "node server.js"
+  },
+  "dependencies": {
+    "okinawa.js": "^2.0.1"
   }
 }
