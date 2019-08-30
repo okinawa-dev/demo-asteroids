@@ -20,7 +20,7 @@
   "optionalDependencies": {},
   "scripts": {
     "lint": "eslint .",
-    "build": "browserify index.js -o build/bundle.js -t [ babelify --global --presets [ @babel/preset-env  ] --plugins [ ] ]",
+    "build": "browserify index.js -o build/bundle.js -t [ babelify --global --presets [ @babel/preset-env  ] --plugins [ ] ] && cp -rf assets index.html style.css build/",
     "build:test": "browserify index.js --list -t [ babelify --global --presets [ @babel/preset-env ] --plugins [ ] ]",
     "start": "node server.js"
   },
