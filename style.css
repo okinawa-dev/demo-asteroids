@@ -29,6 +29,14 @@ a {
   /* height:600px; */
 }
 
+#note {
+  width: 500px;
+  margin: 15px auto 15px auto;
+  padding: 15px;
+  border: 1px solid gray;
+  text-align: center;
+}
+
 /* Give canvas a background */
 canvas {
   background-color: black;
