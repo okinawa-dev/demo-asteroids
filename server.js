@@ -1,3 +1,5 @@
+/* eslint-env node */
+/* eslint no-console: 0 */
 'use strict';
 
 var connect = require('connect');
