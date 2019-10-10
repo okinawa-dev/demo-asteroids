@@ -61,7 +61,8 @@ export default class StarBackground extends Background {
 
     for (let depth = 0; depth < 3; depth++) {
       this.offsets[depth] += this.speeds[depth] / dt;
-      this.offsets[depth] = this.offsets[depth] % this.starfields[depth].height;
+      this.offsets[depth] =
+        this.offsets[depth] % this.starfields[depth].height;
     }
   }
 
@@ -84,7 +85,9 @@ export default class StarBackground extends Background {
         engine.currentScene <= 2
       ) {
         parallaxOffset =
-          ((depth + 1) * this.parallaxDisplacement * (engine.core.size.x / 2)) /
+          ((depth + 1) *
+            this.parallaxDisplacement *
+            (engine.core.size.x / 2)) /
           engine.core.size.x;
       } else {
         let playerDisplacement = engine.player.getAvatar().getPosition().x;

@@ -50,29 +50,29 @@ export default class Level extends Scene {
       let angle = Math.random() * Math.PI; // 180 degrees
 
       switch (side) {
-      case 0: // up
-        meteor.position.x = Math.random() * engine.core.size.x;
-        meteor.position.y = 1 - meteor.size.y;
-        break;
+        case 0: // up
+          meteor.position.x = Math.random() * engine.core.size.x;
+          meteor.position.y = 1 - meteor.size.y;
+          break;
 
-      case 1: // right
-        meteor.position.x = 1 - meteor.size.x;
-        meteor.position.y = Math.random() * engine.core.size.y;
-        angle += Math.PI / 2;
-        break;
+        case 1: // right
+          meteor.position.x = 1 - meteor.size.x;
+          meteor.position.y = Math.random() * engine.core.size.y;
+          angle += Math.PI / 2;
+          break;
 
-      case 2: // down
-        meteor.position.x = Math.random() * engine.core.size.x;
-        meteor.position.y = engine.core.size.y + meteor.size.y - 1;
-        angle -= Math.PI;
-        break;
+        case 2: // down
+          meteor.position.x = Math.random() * engine.core.size.x;
+          meteor.position.y = engine.core.size.y + meteor.size.y - 1;
+          angle -= Math.PI;
+          break;
 
-      default:
-      case 3: // left
-        meteor.position.x = engine.core.size.x + meteor.size.x - 1;
-        meteor.position.y = Math.random() * engine.core.size.y;
-        angle -= Math.PI / 2;
-        break;
+        default:
+        case 3: // left
+          meteor.position.x = engine.core.size.x + meteor.size.x - 1;
+          meteor.position.y = Math.random() * engine.core.size.y;
+          angle -= Math.PI / 2;
+          break;
       }
 
       let direction = MATH.angleToDirectionVector(angle);
