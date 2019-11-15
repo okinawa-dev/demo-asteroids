@@ -1,12 +1,12 @@
 {
   "author": "Ivan Alonso (@neverbot)",
-  "name": "okinawa-asteroids",
-  "description": "Asteroids clone using okinawa.js",
+  "name": "demo-asteroids",
+  "description": "Asteroids clone, demo of the okinawa.js engine",
   "version": "2.0.5",
   "homepage": "http://dev.neverbot.com/okinawa.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:okinawajs/okinawa-asteroids.git"
+    "url": "git@github.com:okinawajs/demo-asteroids.git"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
@@ -23,7 +23,8 @@
   },
   "optionalDependencies": {},
   "scripts": {
-    "lint": "eslint .",
+    "lint": "./node_modules/eslint/bin/eslint.js .",
+    "lint-fix": "./node_modules/eslint/bin/eslint.js . --fix",
     "build": "browserify index.js -o build/bundle.js -t [ babelify --global --presets [ @babel/preset-env  ] --plugins [ ] ] && cp -rf assets index.html style.css build/",
     "build:test": "browserify index.js --list -t [ babelify --global --presets [ @babel/preset-env ] --plugins [ ] ]",
     "start": "node server.js"
