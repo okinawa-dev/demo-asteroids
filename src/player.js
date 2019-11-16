@@ -1,7 +1,9 @@
-import engine from 'okinawa.js/src/engine';
-import Player from 'okinawa.js/src/player';
-import * as INPUT from 'okinawa.js/src/input/input';
-import * as MATH from 'okinawa.js/src/math/math';
+import { engine as okinawa } from 'okinawa.js';
+
+import { Player } from 'okinawa.js';
+import { INPUT } from 'okinawa.js';
+import { MATH } from 'okinawa.js';
+
 import * as ITEMS from './items/items';
 
 export default class AsteroidsPlayer extends Player {
@@ -50,7 +52,7 @@ export default class AsteroidsPlayer extends Player {
       let now = new Date().getTime();
 
       // Enough time between shots
-      if (now - this.timeLastShot > engine.options.shotPeriodicity) {
+      if (now - this.timeLastShot > okinawa.options.shotPeriodicity) {
         this.avatar.shoot();
         this.timeLastShot = now;
       }
@@ -72,19 +74,19 @@ export default class AsteroidsPlayer extends Player {
     //  Continuous keys (without events)
     // ------------------------------------------------
 
-    if (engine.input.isKeyPressed(INPUT.KEYS.LEFT)) {
+    if (okinawa.input.isKeyPressed(INPUT.KEYS.LEFT)) {
       this.isTurningLeft = true;
     } else {
       this.isTurningLeft = false;
     }
 
-    if (engine.input.isKeyPressed(INPUT.KEYS.RIGHT)) {
+    if (okinawa.input.isKeyPressed(INPUT.KEYS.RIGHT)) {
       this.isTurningRight = true;
     } else {
       this.isTurningRight = false;
     }
 
-    if (engine.input.isKeyPressed(INPUT.KEYS.UP)) {
+    if (okinawa.input.isKeyPressed(INPUT.KEYS.UP)) {
       this.isThrusting = true;
     } else {
       this.isThrusting = false;
@@ -121,7 +123,7 @@ export default class AsteroidsPlayer extends Player {
 
     // Check if we are inside the scene
     // Bounce right side
-    if (this.avatar.position.x > engine.core.size.x) {
+    if (this.avatar.position.x > okinawa.core.size.x) {
       this.avatar.move(-(this.avatar.size.x / 4), 0);
       this.avatar.speed.x = -this.avatar.speed.x / 2;
     }
@@ -132,7 +134,7 @@ export default class AsteroidsPlayer extends Player {
     }
 
     // Bounce lower side
-    if (this.avatar.position.y > engine.core.size.y) {
+    if (this.avatar.position.y > okinawa.core.size.y) {
       this.avatar.move(0, -this.avatar.size.y / 4);
       this.avatar.speed.y = -this.avatar.speed.y / 2;
     }

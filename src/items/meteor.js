@@ -1,5 +1,6 @@
-import engine from 'okinawa.js/src/engine';
-import Item from 'okinawa.js/src/item';
+import { engine as okinawa } from 'okinawa.js';
+import { Item } from 'okinawa.js';
+
 import Shot from './shot';
 
 export default class Meteor extends Item {
@@ -8,8 +9,8 @@ export default class Meteor extends Item {
 
     this.spriteName = 'meteor';
 
-    this.size.x = engine.sprites.sprites[this.spriteName][3];
-    this.size.y = engine.sprites.sprites[this.spriteName][4];
+    this.size.x = okinawa.sprites.sprites[this.spriteName][3];
+    this.size.y = okinawa.sprites.sprites[this.spriteName][4];
 
     this.linearSpeed = speed;
 
@@ -26,7 +27,7 @@ export default class Meteor extends Item {
     super.step(dt);
 
     // Not necessary if there are no animations, but here it is
-    // engine.sprites.step(dt, this);
+    // okinawa.sprites.step(dt, this);
   }
 
   draw(ctx) {
@@ -45,7 +46,7 @@ export default class Meteor extends Item {
       newVy = what.speed.y / 10;
     }
 
-    let effect = engine.effects.addEffect(
+    let effect = okinawa.effects.addEffect(
       'halo',
       this.position.x,
       this.position.y,
@@ -59,7 +60,7 @@ export default class Meteor extends Item {
     effect.transparencyMethod = 2; // disappearing
 
     for (let i = 0; i < 10; i++) {
-      effect = engine.effects.addEffect(
+      effect = okinawa.effects.addEffect(
         'explosion',
         this.position.x + (Math.random() - 0.5) * 40,
         this.position.y + (Math.random() - 0.5) * 40,
@@ -74,7 +75,7 @@ export default class Meteor extends Item {
       effect.transparencyMethod = Math.floor(Math.random() * 3);
     }
 
-    engine.sounds.play('explosion');
+    okinawa.sounds.play('explosion');
 
     // true == should be removed
     return true;

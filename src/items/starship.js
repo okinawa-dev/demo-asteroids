@@ -1,6 +1,6 @@
-import engine from 'okinawa.js/src/engine';
-import Item from 'okinawa.js/src/item';
-import Emitter from 'okinawa.js/src/effects/emitter';
+import { engine as okinawa } from 'okinawa.js';
+import { Item } from 'okinawa.js';
+import { Emitter } from 'okinawa.js';
 
 import Shot from './shot';
 import Gun from './gun';
@@ -11,8 +11,8 @@ export default class Starship extends Item {
 
     this.spriteName = type;
 
-    this.size.x = engine.sprites.sprites[this.spriteName][3];
-    this.size.y = engine.sprites.sprites[this.spriteName][4];
+    this.size.x = okinawa.sprites.sprites[this.spriteName][3];
+    this.size.y = okinawa.sprites.sprites[this.spriteName][4];
 
     // for collisions
     this.maxRadius = this.getRadius();
@@ -45,11 +45,11 @@ export default class Starship extends Item {
 
   step(dt) {
     // Not necessary if there are no animations, but here it is
-    // engine.sprites.step(dt, this);
+    // okinawa.sprites.step(dt, this);
 
     super.step(dt);
 
-    if (engine.player.isThrusting === true) {
+    if (okinawa.player.isThrusting === true) {
       this.motorEffect.start();
     } else {
       this.motorEffect.stop();
@@ -70,7 +70,7 @@ export default class Starship extends Item {
     this.speed.x = this.speed.x / 10;
     this.speed.y = this.speed.y / 10;
 
-    engine.game.points.add(-10);
+    okinawa.game.points.add(-10);
 
     // should not be removed
     return false;
@@ -81,6 +81,6 @@ export default class Starship extends Item {
       this.gunRack[i].shoot(this);
     }
 
-    engine.sounds.play('shot');
+    okinawa.sounds.play('shot');
   }
 }

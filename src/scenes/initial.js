@@ -1,6 +1,6 @@
-import engine from 'okinawa.js/src/engine';
-import Scene from 'okinawa.js/src/scenes/scene';
-import * as INPUT from 'okinawa.js/src/input/input';
+import { engine as okinawa } from 'okinawa.js';
+import { Scene } from 'okinawa.js';
+import { INPUT } from 'okinawa.js';
 
 export default class InitialScene extends Scene {
   constructor() {
@@ -18,10 +18,10 @@ export default class InitialScene extends Scene {
 
   // Will be called when the scene starts being playable
   activate() {
-    let avatar = engine.player.getAvatar();
+    let avatar = okinawa.player.getAvatar();
 
     // Position the player avatar in the proper place
-    avatar.setPosition(engine.core.size.x / 2, engine.core.size.y / 2);
+    avatar.setPosition(okinawa.core.size.x / 2, okinawa.core.size.y / 2);
 
     // Attach the player avatar to this scene
     this.attachItem(avatar);
@@ -39,7 +39,7 @@ export default class InitialScene extends Scene {
 
   eventKeyPressed(keyCode) {
     if (keyCode == INPUT.KEYS.SPACEBAR) {
-      engine.scenes.advanceScene();
+      okinawa.scenes.advanceScene();
     }
   }
 }

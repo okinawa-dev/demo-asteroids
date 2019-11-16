@@ -1,6 +1,7 @@
-import engine from 'okinawa.js/src/engine';
-import Item from 'okinawa.js/src/item';
-import * as MATH from 'okinawa.js/src/math/math';
+import { engine as okinawa } from 'okinawa.js';
+import { Item } from 'okinawa.js';
+import { MATH } from 'okinawa.js';
+
 import Meteor from './meteor';
 
 export default class Shot extends Item {
@@ -12,8 +13,8 @@ export default class Shot extends Item {
     // The object which originated the shot (player, npc, etc)
     this.creator = creator;
 
-    this.size.x = engine.sprites.sprites[this.spriteName][3];
-    this.size.y = engine.sprites.sprites[this.spriteName][4];
+    this.size.x = okinawa.sprites.sprites[this.spriteName][3];
+    this.size.y = okinawa.sprites.sprites[this.spriteName][4];
 
     this.position = position;
 
@@ -35,7 +36,7 @@ export default class Shot extends Item {
     super.step(dt);
 
     // Not necessary if there are no animations, but here it is
-    // engine.sprites.step(dt, this);
+    // okinawa.sprites.step(dt, this);
   }
 
   draw(ctx) {
@@ -55,7 +56,7 @@ export default class Shot extends Item {
 
     // Win!
     if (what instanceof Meteor) {
-      engine.game.points.add(50);
+      okinawa.game.points.add(50);
     }
 
     // Should be done only if we are going to return true in this function

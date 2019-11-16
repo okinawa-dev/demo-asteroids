@@ -1,4 +1,5 @@
-import engine from 'okinawa.js/src/engine';
+import { engine as okinawa } from 'okinawa.js';
+
 import Options from './options';
 import * as SCENES from './scenes/scenes';
 import Loader from './loader';
@@ -18,9 +19,9 @@ class Game {
   }
 
   initialize() {
-    // The specific game options could be reached as options AND as engine.options
+    // The specific game options could be reached as options AND as okinawa.options
     this.options = new Options();
-    engine.options.addOptions(this.options);
+    okinawa.options.addOptions(this.options);
 
     // Common background for every screen
     this.commonBackground = new SCENES.StarBackground();
@@ -29,8 +30,8 @@ class Game {
     this.loader = new Loader();
     this.loader.initialize();
 
-    engine.player = new AsteroidsPlayer();
-    engine.player.initialize();
+    okinawa.player = new AsteroidsPlayer();
+    okinawa.player.initialize();
 
     this.points = new Points();
     this.points.initialize();
@@ -38,21 +39,21 @@ class Game {
 
   // Game Initialization
   activate() {
-    engine.logs.log('activate', 'Starting game');
+    okinawa.logs.log('activate', 'Starting game');
 
     let lvl = new SCENES.InitialScene();
     lvl.addBackground(this.commonBackground);
     lvl.playable = true;
     lvl.initialize();
 
-    engine.scenes.addScene(lvl, 'start_game');
+    okinawa.scenes.addScene(lvl, 'start_game');
 
     lvl = new SCENES.Level();
     lvl.addBackground(this.commonBackground);
     lvl.playable = true;
     lvl.initialize();
 
-    engine.scenes.addScene(lvl, 'main_game');
+    okinawa.scenes.addScene(lvl, 'main_game');
   }
 
   step() {}

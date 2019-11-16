@@ -1,5 +1,5 @@
-import engine from 'okinawa.js/src/engine';
-import Background from 'okinawa.js/src/scenes/background';
+import { engine as okinawa } from 'okinawa.js';
+import { Background } from 'okinawa.js';
 
 export default class StarBackground extends Background {
   constructor() {
@@ -21,8 +21,8 @@ export default class StarBackground extends Background {
       this.starfields[depth] = document.createElement('canvas');
       this.starfields[depth].layer = depth;
       this.starfields[depth].width =
-        engine.core.size.x + (depth + 1) * this.parallaxDisplacement;
-      this.starfields[depth].height = engine.core.size.y;
+        okinawa.core.size.x + (depth + 1) * this.parallaxDisplacement;
+      this.starfields[depth].height = okinawa.core.size.y;
       this.starfields[depth].ctx = this.starfields[depth].getContext('2d');
 
       this.speeds[depth] = this.BACKGROUND_SPEED + (depth + 1) * 7;
@@ -57,7 +57,7 @@ export default class StarBackground extends Background {
 
   step(dt) {
     // Call inherited function
-    // Engine.Background.prototype.step.call(this, dt);
+    // okinawa.Background.prototype.step.call(this, dt);
 
     for (let depth = 0; depth < 3; depth++) {
       this.offsets[depth] += this.speeds[depth] / dt;
@@ -68,7 +68,7 @@ export default class StarBackground extends Background {
 
   draw(ctx) {
     // Call inherited function
-    // Engine.Background.prototype.draw.call(this, ctx);
+    // okinawa.Background.prototype.draw.call(this, ctx);
 
     for (let depth = 0; depth < 3; depth++) {
       let intOffset = Math.floor(this.offsets[depth]);
@@ -80,26 +80,26 @@ export default class StarBackground extends Background {
 
       // No player or one the three first screens (preloader, menu or initial animation)
       if (
-        typeof engine.player == 'undefined' ||
-        engine.player === null ||
-        engine.currentScene <= 2
+        typeof okinawa.player == 'undefined' ||
+        okinawa.player === null ||
+        okinawa.currentScene <= 2
       ) {
         parallaxOffset =
           ((depth + 1) *
             this.parallaxDisplacement *
-            (engine.core.size.x / 2)) /
-          engine.core.size.x;
+            (okinawa.core.size.x / 2)) /
+          okinawa.core.size.x;
       } else {
-        let playerDisplacement = engine.player.getAvatar().getPosition().x;
+        let playerDisplacement = okinawa.player.getAvatar().getPosition().x;
 
         parallaxOffset = Math.round(
           ((depth + 1) * this.parallaxDisplacement * playerDisplacement) /
-            engine.core.size.x
+            okinawa.core.size.x
         );
 
         if (parallaxOffset < 0) parallaxOffset = 0;
-        else if (parallaxOffset + engine.core.size.x > maxWidth)
-          parallaxOffset = maxWidth - engine.core.size.x;
+        else if (parallaxOffset + okinawa.core.size.x > maxWidth)
+          parallaxOffset = maxWidth - okinawa.core.size.x;
       }
 
       // Draw the top half of the starfield
@@ -108,11 +108,11 @@ export default class StarBackground extends Background {
           this.starfields[depth],
           0 + parallaxOffset,
           remaining,
-          engine.core.size.x,
+          okinawa.core.size.x,
           intOffset,
           0,
           0,
-          engine.core.size.x,
+          okinawa.core.size.x,
           intOffset
         );
       }
@@ -123,11 +123,11 @@ export default class StarBackground extends Background {
           this.starfields[depth],
           0 + parallaxOffset,
           0,
-          engine.core.size.x,
+          okinawa.core.size.x,
           remaining,
           0,
           intOffset,
-          engine.core.size.x,
+          okinawa.core.size.x,
           remaining
         );
       }

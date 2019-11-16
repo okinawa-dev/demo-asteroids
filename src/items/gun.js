@@ -1,6 +1,7 @@
-import engine from 'okinawa.js/src/engine';
-import Item from 'okinawa.js/src/item';
-import * as MATH from 'okinawa.js/src/math/math';
+import { engine as okinawa } from 'okinawa.js';
+import { Item } from 'okinawa.js';
+import { MATH } from 'okinawa.js';
+
 import Shot from './shot';
 
 export default class Gun extends Item {
@@ -11,7 +12,7 @@ export default class Gun extends Item {
   }
   step(dt) {
     // Not necessary if there are no animations, but here it is
-    // engine.sprites.step(dt, this);
+    // okinawa.sprites.step(dt, this);
     super.step(dt);
   }
 
@@ -22,7 +23,7 @@ export default class Gun extends Item {
   shoot(creator) {
     // var pos = this.getPosition();
     var shot = new Shot(creator, this.getPosition(), this.getRotation());
-    engine.scenes.getCurrentScene().attachItem(shot);
+    okinawa.scenes.getCurrentScene().attachItem(shot);
   }
 
   collide() {

@@ -1,4 +1,4 @@
-import engine from 'okinawa.js/src/engine';
+import { engine as okinawa } from 'okinawa.js';
 
 export default class Points {
   constructor() {
@@ -11,12 +11,12 @@ export default class Points {
   add(points) {
     this.totalPoints += points;
 
-    let scene = engine.scenes.getCurrentScene();
+    let scene = okinawa.scenes.getCurrentScene();
     let guiItem = scene.gui.get('points');
 
     if (typeof guiItem != 'undefined') {
       guiItem.setText(
-        engine.localization.get('points') + ': ' + this.totalPoints
+        okinawa.localization.get('points') + ': ' + this.totalPoints
       );
     }
   }

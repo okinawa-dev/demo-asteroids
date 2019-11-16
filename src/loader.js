@@ -1,14 +1,14 @@
-import engine from 'okinawa.js/src/engine';
+import { engine as okinawa } from 'okinawa.js';
 
 export default class Loader {
   constructor() {}
 
   // Game.Loader Initialization
   initialize() {
-    // engine.preloader.addAnimation(anim_name, path,
+    // okinawa.preloader.addAnimation(anim_name, path,
     // xStart, yStart, width, height, frames, initFrame, speed)
 
-    engine.preloader.addSprite({
+    okinawa.preloader.addSprite({
       name: 'starship',
       path: 'assets/images/ship.png',
       width: 50,
@@ -18,7 +18,7 @@ export default class Loader {
     // **************
     //  Enemies
     // **************
-    engine.preloader.addSprite({
+    okinawa.preloader.addSprite({
       name: 'meteor',
       path: 'assets/images/meteor.png',
       width: 60,
@@ -28,7 +28,7 @@ export default class Loader {
     // **************
     //  Shots
     // **************
-    engine.preloader.addSprite({
+    okinawa.preloader.addSprite({
       name: 'shot',
       path: 'assets/images/shot.png',
       width: 10,
@@ -38,7 +38,7 @@ export default class Loader {
     // **************
     //  Effects
     // **************
-    engine.preloader.addAnimation({
+    okinawa.preloader.addAnimation({
       name: 'explosion',
       path: 'assets/images/effect.explosion.png',
       xStart: 0,
@@ -50,7 +50,7 @@ export default class Loader {
       speed: 14
     });
 
-    engine.preloader.addSprite({
+    okinawa.preloader.addSprite({
       name: 'halo',
       path: 'assets/images/effect.halo.png',
       width: 63,
@@ -60,12 +60,12 @@ export default class Loader {
     // **************
     //  Sounds
     // **************
-    engine.preloader.addSound({
+    okinawa.preloader.addSound({
       name: 'explosion',
       path: 'assets/sounds/fridobeck_explosion.mp3'
     });
 
-    engine.preloader.addSound({
+    okinawa.preloader.addSound({
       name: 'shot',
       path: 'assets/sounds/halgrimm_shot.mp3'
     });
@@ -73,26 +73,26 @@ export default class Loader {
     // **************
     //  Fonts
     // **************
-    engine.preloader.addFont({
+    okinawa.preloader.addFont({
       name: 'baseFont',
       path: 'assets/fonts/visitor1.ttf'
     });
 
     // First screen: preloader with progress bar
-    engine.preloader.addBackground(engine.game.commonBackground);
-    engine.preloader.initialize(); // Usually empty
-    engine.scenes.addScene(engine.preloader, 'preloader');
-    engine.scenes.setScene(0);
+    okinawa.preloader.addBackground(okinawa.game.commonBackground);
+    okinawa.preloader.initialize(); // Usually empty
+    okinawa.scenes.addScene(okinawa.preloader, 'preloader');
+    okinawa.scenes.setScene(0);
 
-    engine.localization.addTextsToStringTable(
+    okinawa.localization.addTextsToStringTable(
       'english',
       this.localization_en()
     );
-    engine.localization.addTextsToStringTable(
+    okinawa.localization.addTextsToStringTable(
       'spanish',
       this.localization_es()
     );
-    engine.localization.selectLanguage(engine.game.options.defaultLanguage);
+    okinawa.localization.selectLanguage(okinawa.game.options.defaultLanguage);
   }
 
   localization_en() {

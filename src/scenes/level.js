@@ -1,7 +1,8 @@
-import engine from 'okinawa.js/src/engine';
-import Scene from 'okinawa.js/src/scenes/scene';
-import * as GUI from 'okinawa.js/src/gui/gui';
-import * as MATH from 'okinawa.js/src/math/math';
+import { engine as okinawa } from 'okinawa.js';
+import { Scene } from 'okinawa.js';
+import { GUI } from 'okinawa.js';
+import { MATH } from 'okinawa.js';
+
 import * as ITEMS from '../items/items';
 
 export default class Level extends Scene {
@@ -18,14 +19,14 @@ export default class Level extends Scene {
     points.setSize(250, 30);
     points.setPosition(
       15 + points.size.x / 2,
-      engine.core.size.y - 15 - points.size.y / 2
+      okinawa.core.size.y - 15 - points.size.y / 2
     ); // left down
-    points.setText(engine.localization.get('points') + ': 0');
+    points.setText(okinawa.localization.get('points') + ': 0');
     this.gui.attachItem(points, 'points');
   }
 
   activate() {
-    this.attachItem(engine.player.getAvatar());
+    this.attachItem(okinawa.player.getAvatar());
 
     super.activate();
   }
@@ -42,7 +43,7 @@ export default class Level extends Scene {
 
     let now = new Date().getTime();
 
-    if (now - this.timeLastMeteor > engine.options.meteorPeriodicity) {
+    if (now - this.timeLastMeteor > okinawa.options.meteorPeriodicity) {
       this.timeLastMeteor = now;
 
       let meteor = new ITEMS.Meteor(1, 1.5); // (size, speed)
@@ -51,26 +52,26 @@ export default class Level extends Scene {
 
       switch (side) {
         case 0: // up
-          meteor.position.x = Math.random() * engine.core.size.x;
+          meteor.position.x = Math.random() * okinawa.core.size.x;
           meteor.position.y = 1 - meteor.size.y;
           break;
 
         case 1: // right
           meteor.position.x = 1 - meteor.size.x;
-          meteor.position.y = Math.random() * engine.core.size.y;
+          meteor.position.y = Math.random() * okinawa.core.size.y;
           angle += Math.PI / 2;
           break;
 
         case 2: // down
-          meteor.position.x = Math.random() * engine.core.size.x;
-          meteor.position.y = engine.core.size.y + meteor.size.y - 1;
+          meteor.position.x = Math.random() * okinawa.core.size.x;
+          meteor.position.y = okinawa.core.size.y + meteor.size.y - 1;
           angle -= Math.PI;
           break;
 
         default:
         case 3: // left
-          meteor.position.x = engine.core.size.x + meteor.size.x - 1;
-          meteor.position.y = Math.random() * engine.core.size.y;
+          meteor.position.x = okinawa.core.size.x + meteor.size.x - 1;
+          meteor.position.y = Math.random() * okinawa.core.size.y;
           angle -= Math.PI / 2;
           break;
       }
@@ -96,10 +97,10 @@ export default class Level extends Scene {
 
       // Item outside the screen -> remove
       if (
-        item.position.x > engine.core.size.x + item.size.x ||
+        item.position.x > okinawa.core.size.x + item.size.x ||
         item.position.x < 0 - item.size.x ||
         item.position.y < 0 - item.size.y ||
-        item.position.y > engine.core.size.y + item.size.y
+        item.position.y > okinawa.core.size.y + item.size.y
       ) {
         this.detachItem(item);
       }
