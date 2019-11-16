@@ -48,6 +48,10 @@ export default class AsteroidsPlayer extends Player {
   }
 
   eventKeyPressed(keyCode) {
+    if (okinawa.core.paused === true) {
+      return;
+    }
+
     if (keyCode == INPUT.KEYS.SPACEBAR) {
       let now = new Date().getTime();
 
