@@ -1,5 +1,5 @@
 import * as okinawa from 'okinawa.js';
-import game from './src/game';
+import game from './game';
 
 // Create and initialize game object
 // parameters:

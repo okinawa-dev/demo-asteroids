@@ -2,7 +2,7 @@
   "author": "Ivan Alonso (@neverbot)",
   "name": "demo-asteroids",
   "description": "Asteroids clone, demo of the okinawa.js engine",
-  "version": "2.0.5",
+  "version": "3.0.0",
   "homepage": "http://dev.neverbot.com/okinawa.js",
   "repository": {
     "type": "git",
@@ -11,25 +11,25 @@
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
-    "babelify": "^10.0.0",
-    "browserify": "^16.5.0",
+    "babel-loader": "^8.0.6",
     "connect": "^3.7.0",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-json-format": "^2.0.1",
     "eslint-plugin-prettier": "^3.1.1",
     "prettier": "^1.19.1",
-    "serve-static": "^1.14.1"
+    "serve-static": "^1.14.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "optionalDependencies": {},
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "lint-fix": "./node_modules/eslint/bin/eslint.js . --fix",
-    "build": "browserify index.js -o build/bundle.js -t [ babelify --global --presets [ @babel/preset-env  ] --plugins [ ] ] && cp -rf assets index.html style.css build/",
-    "build:test": "browserify index.js --list -t [ babelify --global --presets [ @babel/preset-env ] --plugins [ ] ]",
+    "build": "webpack --config .webpack.config.js --display-modules && cp -rf demo-asteroids.js assets index.html style.css build/",
     "start": "node server.js"
   },
   "dependencies": {
-    "okinawa.js": "^2.0.5"
+    "okinawa.js": "^3.0.0"
   }
 }
