@@ -9,18 +9,18 @@
     "url": "git@github.com:okinawajs/demo-asteroids.git"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
     "babel-loader": "^8.0.6",
     "connect": "^3.7.0",
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.5.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-json-format": "^2.0.1",
-    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^1.19.1",
     "serve-static": "^1.14.1",
-    "webpack": "^4.41.2",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   },
   "optionalDependencies": {},
@@ -31,6 +31,6 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "okinawa.js": "^3.0.0"
+    "okinawa.js": "^3.1.1"
   }
 }
