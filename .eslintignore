@@ -4,6 +4,7 @@ package-lock.json
 
 # Ignore build/ files
 build/*
+demo-asteroids.js
 
 # Ignore assets/ files
 assets/*
