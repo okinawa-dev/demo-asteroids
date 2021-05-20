@@ -12,7 +12,7 @@ export default class Loader {
       name: 'starship',
       path: 'assets/images/ship.png',
       width: 50,
-      height: 50
+      height: 50,
     });
 
     // **************
@@ -22,7 +22,7 @@ export default class Loader {
       name: 'meteor',
       path: 'assets/images/meteor.png',
       width: 60,
-      height: 60
+      height: 60,
     });
 
     // **************
@@ -32,7 +32,7 @@ export default class Loader {
       name: 'shot',
       path: 'assets/images/shot.png',
       width: 10,
-      height: 10
+      height: 10,
     });
 
     // **************
@@ -47,14 +47,14 @@ export default class Loader {
       height: 47,
       frames: 11,
       initFrame: 0,
-      speed: 14
+      speed: 14,
     });
 
     okinawa.preloader.addSprite({
       name: 'halo',
       path: 'assets/images/effect.halo.png',
       width: 63,
-      height: 63
+      height: 63,
     });
 
     // **************
@@ -62,12 +62,12 @@ export default class Loader {
     // **************
     okinawa.preloader.addSound({
       name: 'explosion',
-      path: 'assets/sounds/fridobeck_explosion.mp3'
+      path: 'assets/sounds/fridobeck_explosion.mp3',
     });
 
     okinawa.preloader.addSound({
       name: 'shot',
-      path: 'assets/sounds/halgrimm_shot.mp3'
+      path: 'assets/sounds/halgrimm_shot.mp3',
     });
 
     // **************
@@ -75,7 +75,7 @@ export default class Loader {
     // **************
     okinawa.preloader.addFont({
       name: 'baseFont',
-      path: 'assets/fonts/visitor1.ttf'
+      path: 'assets/fonts/visitor1.ttf',
     });
 
     // First screen: preloader with progress bar
@@ -102,7 +102,7 @@ export default class Loader {
       touch_screen: 'Touch the screen to continue',
       points: 'Points',
       accumulated: 'Accumulated points',
-      totals: 'Total points'
+      totals: 'Total points',
     };
   }
 
@@ -113,7 +113,7 @@ export default class Loader {
       touch_screen: 'Toca la pantalla para continuar',
       points: 'Puntos',
       accumulated: 'Puntos acumulados',
-      totals: 'Puntos totales'
+      totals: 'Puntos totales',
     };
   }
 }
