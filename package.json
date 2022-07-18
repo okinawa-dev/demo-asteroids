@@ -25,8 +25,8 @@
   },
   "optionalDependencies": {},
   "scripts": {
-    "lint": "npx eslint . --ext .js,.json",
-    "lint:fix": "npx eslint . --ext .js,.json --fix",
+    "lint": "npx eslint . --ext js,json",
+    "lint:fix": "npx eslint . --ext js,json --fix",
     "build": "npx webpack --config .webpack.config.js --mode=production && cp -rf demo-asteroids.js assets index.html style.css build/",
     "start": "node server.js"
   },
