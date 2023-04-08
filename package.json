@@ -2,26 +2,26 @@
   "author": "Ivan Alonso (@neverbot)",
   "name": "demo-asteroids",
   "description": "Asteroids clone, demo of the okinawa.js engine",
-  "version": "3.1.14",
+  "version": "3.1.15",
   "homepage": "http://dev.neverbot.com/okinawa.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:okinawajs/demo-asteroids.git"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.2",
-    "@babel/preset-env": "^7.20.2",
-    "babel-loader": "^9.1.0",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "babel-loader": "^9.1.2",
     "connect": "^3.7.0",
-    "eslint": "^8.27.0",
-    "eslint-config-prettier": "^8.5.0",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-json-format": "^2.0.1",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.7",
     "serve-static": "^1.15.0",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^4.10.0"
+    "webpack": "^5.78.0",
+    "webpack-cli": "^5.0.1"
   },
   "optionalDependencies": {},
   "scripts": {
@@ -31,6 +31,6 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "okinawa.js": "^3.1.14"
+    "okinawa.js": "^3.1.15"
   }
 }
