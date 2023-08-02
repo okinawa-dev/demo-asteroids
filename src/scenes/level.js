@@ -19,7 +19,7 @@ export default class Level extends Scene {
     points.setSize(250, 30);
     points.setPosition(
       15 + points.size.x / 2,
-      okinawa.core.size.y - 15 - points.size.y / 2
+      okinawa.core.size.y - 15 - points.size.y / 2,
     ); // left down
     points.setText(okinawa.localization.get('points') + ': 0');
     this.gui.attachItem(points, 'points');

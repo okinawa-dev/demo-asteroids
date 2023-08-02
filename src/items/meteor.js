@@ -51,7 +51,7 @@ export default class Meteor extends Item {
       this.position.x,
       this.position.y,
       this.speed.x + newVx,
-      this.speed.y + newVy
+      this.speed.y + newVy,
     );
     effect.initialScaling = 2;
     effect.finalScaling = 3;
@@ -65,7 +65,7 @@ export default class Meteor extends Item {
         this.position.x + (Math.random() - 0.5) * 40,
         this.position.y + (Math.random() - 0.5) * 40,
         this.speed.x + (Math.random() - 0.5),
-        this.speed.y + (Math.random() - 0.5)
+        this.speed.y + (Math.random() - 0.5),
       );
       effect.scaling.x = Math.abs(Math.random() - 0.1);
       effect.scaling.y = effect.scaling.x;

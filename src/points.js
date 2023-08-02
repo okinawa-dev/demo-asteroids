@@ -16,7 +16,7 @@ export default class Points {
 
     if (typeof guiItem != 'undefined') {
       guiItem.setText(
-        okinawa.localization.get('points') + ': ' + this.totalPoints
+        okinawa.localization.get('points') + ': ' + this.totalPoints,
       );
     }
   }

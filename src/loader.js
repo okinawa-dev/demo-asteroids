@@ -86,11 +86,11 @@ export default class Loader {
 
     okinawa.localization.addTextsToStringTable(
       'english',
-      this.localization_en()
+      this.localization_en(),
     );
     okinawa.localization.addTextsToStringTable(
       'spanish',
-      this.localization_es()
+      this.localization_es(),
     );
     okinawa.localization.selectLanguage(okinawa.game.options.defaultLanguage);
   }

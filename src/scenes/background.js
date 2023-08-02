@@ -35,7 +35,7 @@ export default class StarBackground extends Background {
           0,
           0,
           this.starfields[depth].width,
-          this.starfields[depth].height
+          this.starfields[depth].height,
         );
       }
 
@@ -49,7 +49,7 @@ export default class StarBackground extends Background {
           Math.floor(Math.random() * this.starfields[depth].width),
           Math.floor(Math.random() * this.starfields[depth].height),
           depth + 1,
-          depth + 1
+          depth + 1,
         );
       }
     }
@@ -94,7 +94,7 @@ export default class StarBackground extends Background {
 
         parallaxOffset = Math.round(
           ((depth + 1) * this.parallaxDisplacement * playerDisplacement) /
-            okinawa.core.size.x
+            okinawa.core.size.x,
         );
 
         if (parallaxOffset < 0) parallaxOffset = 0;
@@ -113,7 +113,7 @@ export default class StarBackground extends Background {
           0,
           0,
           okinawa.core.size.x,
-          intOffset
+          intOffset,
         );
       }
 
@@ -128,7 +128,7 @@ export default class StarBackground extends Background {
           0,
           intOffset,
           okinawa.core.size.x,
-          remaining
+          remaining,
         );
       }
     }
