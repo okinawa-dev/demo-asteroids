@@ -2,7 +2,7 @@
   "author": "Ivan Alonso (@neverbot)",
   "name": "demo-asteroids",
   "description": "Asteroids clone, demo of the okinawa.js engine",
-  "version": "3.1.15",
+  "version": "3.1.16",
   "homepage": "http://dev.neverbot.com/okinawa.js",
   "repository": {
     "type": "git",
