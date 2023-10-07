@@ -6,7 +6,7 @@
   "homepage": "http://dev.neverbot.com/okinawa.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:okinawajs/demo-asteroids.git"
+    "url": "git@github.com:okinawa-dev/demo-asteroids.git"
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",

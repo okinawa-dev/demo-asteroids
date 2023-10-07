@@ -2,7 +2,7 @@
 
 ![npm](https://img.shields.io/npm/v/okinawa.js?label=okinawa.js)
 
-A simple javascript 2D game demo for the [Okinawa.js](https://github.com/okinawajs/okinawa.js) engine. Test it on https://dev.neverbot.com/okinawa-asteroids/
+A simple javascript 2D game demo for the [Okinawa.js](https://github.com/okinawa-dev/okinawa.js) engine. Test it on https://dev.neverbot.com/okinawa-asteroids/
 
 How to build:
 
