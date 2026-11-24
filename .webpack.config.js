@@ -1,4 +1,3 @@
-
 const path = require('path');
 
 module.exports = {
@@ -9,7 +8,7 @@ module.exports = {
     library: 'demo-asteroids',
     libraryTarget: 'umd2',
     path: path.join(__dirname, '/'),
-    filename: 'demo-asteroids.js'
+    filename: 'demo-asteroids.js',
   },
   module: {
     rules: [
@@ -19,10 +18,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      }
-    ]
-  }  
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+    ],
+  },
 };
