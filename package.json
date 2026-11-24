@@ -32,6 +32,6 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "okinawa.js": "^3.1.18"
+    "okinawa.js": "^3.2.0"
   }
 }
